@@ -1,0 +1,1 @@
+# Redfish_Standard_Registries
