@@ -1,13 +1,13 @@
 {
-    "@Redfish.Copyright": "Copyright 2020-2023 DMTF. All rights reserved.",
+    "@Redfish.Copyright": "Copyright 2020-2024 DMTF. All rights reserved.",
     "@Redfish.License": "Creative Commons Attribution 4.0 License.  For full text see link: https://creativecommons.org/licenses/by/4.0/",
     "@odata.type": "#MessageRegistry.v1_6_2.MessageRegistry",
-    "Id": "StorageDevice.1.2.1",
+    "Id": "StorageDevice.1.3.0",
     "Name": "Storage Device Message Registry",
     "Language": "en",
     "Description": "This registry defines the messages for storage devices.",
     "RegistryPrefix": "StorageDevice",
-    "RegistryVersion": "1.2.1",
+    "RegistryVersion": "1.3.0",
     "OwningEntity": "DMTF",
     "Messages": {
         "ControllerOK": {
@@ -83,6 +83,31 @@
                     "DriveFailure"
                 ]
             }
+        },
+        "DrivePredictedMediaLifeLow": {
+            "Description": "The drive media predicted life left is low.",
+            "LongDescription": "This message shall indicate a drive media predicted life left level is below a user or vendor-defined threshold.",
+            "Message": "The drive located at `%1` has a predicted media life left of %2 percent and is below the specified threhsold of %3 percent.",
+            "Severity": "Warning",
+            "MessageSeverity": "Warning",
+            "VersionAdded": "1.3.0",
+            "NumberOfArgs": 3,
+            "ParamTypes": [
+                "string",
+                "number",
+                "number"
+            ],
+            "ArgDescriptions": [
+                "The location of the drive.",
+                "The percent of predicted media life left.",
+                "The alert threshold."
+            ],
+            "ArgLongDescriptions": [
+                "This argument shall contain the drive location.",
+                "This argument shall contain the value of PredictedMediaLifeLeft for this drive.",
+                "This argument shall contain the value of the threshold that triggered this message."
+            ],
+            "Resolution": "Replace the drive before the predicted media life left reaches 0%."
         },
         "DrivePredictiveFailure": {
             "Description": "A predictive drive failure condition was detected.",
@@ -196,6 +221,7 @@
                 "ClearsMessage": [
                     "DriveRemoved",
                     "DrivePredictiveFailure",
+                    "DrivePredictedMediaLifeLow",
                     "DriveFailure",
                     "DriveMissing"
                 ]
@@ -223,6 +249,7 @@
                 "ClearsMessage": [
                     "DriveInserted",
                     "DrivePredictiveFailure",
+                    "DrivePredictedMediaLifeLow",
                     "DriveFailure",
                     "DriveOffline"
                 ]

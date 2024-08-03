@@ -1,13 +1,13 @@
 {
-    "@Redfish.Copyright": "Copyright 2019-2023 DMTF. All rights reserved.",
+    "@Redfish.Copyright": "Copyright 2019-2024 DMTF. All rights reserved.",
     "@Redfish.License": "Creative Commons Attribution 4.0 License.  For full text see link: https://creativecommons.org/licenses/by/4.0/",
     "@odata.type": "#MessageRegistry.v1_6_2.MessageRegistry",
-    "Id": "NetworkDevice.1.0.3",
+    "Id": "NetworkDevice.1.1.0",
     "Name": "Network Device Message Registry",
     "Language": "en",
     "Description": "This registry defines the messages for networking devices.",
     "RegistryPrefix": "NetworkDevice",
-    "RegistryVersion": "1.0.3",
+    "RegistryVersion": "1.1.0",
     "OwningEntity": "DMTF",
     "Messages": {
         "CableInserted": {
@@ -71,9 +71,9 @@
                 "string"
             ],
             "ArgDescriptions": [
-                "The name or identifier of network adapter.",
-                "The name or identifier of network port.",
-                "The name or identifier of network function."
+                "The name or identifier of the network adapter.",
+                "The name or identifier of the network port.",
+                "The name or identifier of the network function."
             ],
             "ArgLongDescriptions": [
                 "This argument shall contain contain a string that identifies or describes the location or physical context of the network adapter from which a connection was dropped.",
@@ -95,9 +95,9 @@
                 "string"
             ],
             "ArgDescriptions": [
-                "The name or identifier of network adapter.",
-                "The name or identifier of network port.",
-                "The name or identifier of network function."
+                "The name or identifier of the network adapter.",
+                "The name or identifier of the network port.",
+                "The name or identifier of the network function."
             ],
             "ArgLongDescriptions": [
                 "This argument shall contain contain a string that identifies or describes the location or physical context of the network adapter to which a connection was established.",
@@ -125,9 +125,9 @@
                 "string"
             ],
             "ArgDescriptions": [
-                "The name or identifier of network adapter.",
-                "The name or identifier of network port.",
-                "The name or identifier of network function."
+                "The name or identifier of the network adapter.",
+                "The name or identifier of the network port.",
+                "The name or identifier of the network function."
             ],
             "ArgLongDescriptions": [
                 "This argument shall contain contain a string that identifies or describes the location or physical context of the network adapter to which a connection was established.",
@@ -141,6 +141,37 @@
                     "ConnectionDropped"
                 ]
             }
+        },
+        "ConnectionSpeedLow": {
+            "Description": "Indicates that a network connection is operating at a speed below the specified threshold.",
+            "LongDescription": "This message shall indicate that a network connection is operating at a link speed lower than the specified threshold.",
+            "Message": "The network adapter '%1' port '%2' function '%3' is operating at a link speed of %4 Gbps which is below the specified threshold of %5 Gbps.",
+            "Severity": "Warning",
+            "MessageSeverity": "Warning",
+            "VersionAdded": "1.1.0",
+            "NumberOfArgs": 5,
+            "ParamTypes": [
+                "string",
+                "string",
+                "string",
+                "number",
+                "number"
+            ],
+            "ArgDescriptions": [
+                "The name or identifier of the network adapter.",
+                "The name or identifier of the network port.",
+                "The name or identifier of the network function.",
+                "The current link speed (Gbps).",
+                "The alert threshold (Gbps)."
+            ],
+            "ArgLongDescriptions": [
+                "This argument shall contain contain a string that identifies or describes the location or physical context of the associated network adapter.",
+                "This argument shall contain contain a string that identifies or describes the location or physical context of the associated network port.",
+                "This argument shall contain contain a string that identifies or describes the location or physical context of the associated network device function.",
+                "This argument shall contain the current connection speed (Gbps).",
+                "This argument shall contain the value of the threshold that triggered this message."
+            ],
+            "Resolution": "Check the network equipment and cabling for this connection."
         },
         "LinkFlapDetected": {
             "Description": "Indicates that a network connection is highly unstable.",
@@ -157,16 +188,16 @@
                 "number"
             ],
             "ArgDescriptions": [
-                "The name or identifier of network adapter.",
-                "The name or identifier of network port.",
-                "The name or identifier of network function.",
+                "The name or identifier of the network adapter.",
+                "The name or identifier of the network port.",
+                "The name or identifier of the network function.",
                 "The number of times the link has flapped.",
                 "The number of minutes over which the link has flapped."
             ],
             "ArgLongDescriptions": [
-                "This argument shall contain contain a string that identifies or describes the location or physical context of the network adapter to which a connection was established.",
-                "This argument shall contain contain a string that identifies or describes the location or physical context of the network port to which a connection was established.",
-                "This argument shall contain contain a string that identifies or describes the location or physical context of the network device function to which a connection was established.",
+                "This argument shall contain contain a string that identifies or describes the location or physical context of the associated network adapter.",
+                "This argument shall contain contain a string that identifies or describes the location or physical context of the associated network port.",
+                "This argument shall contain contain a string that identifies or describes the location or physical context of the associated network device function.",
                 "This argument shall contain be a number representing the count of link establishment/disconnection cycles.",
                 "This argument shall contain be a number representing the number of minutes over which link flapping activity was detected."
             ],

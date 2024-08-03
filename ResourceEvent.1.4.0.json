@@ -1,13 +1,13 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2023 DMTF in cooperation with the Storage Networking Industry Association (SNIA). All rights reserved.",
+    "@Redfish.Copyright": "Copyright 2014-2024 DMTF in cooperation with the Storage Networking Industry Association (SNIA). All rights reserved.",
     "@Redfish.License": "Creative Commons Attribution 4.0 License.  For full text see link: https://creativecommons.org/licenses/by/4.0/",
     "@odata.type": "#MessageRegistry.v1_6_2.MessageRegistry",
-    "Id": "ResourceEvent.1.3.1",
+    "Id": "ResourceEvent.1.4.0",
     "Name": "Resource Event Message Registry",
     "Language": "en",
     "Description": "This registry defines the messages to use for resource events.",
     "RegistryPrefix": "ResourceEvent",
-    "RegistryVersion": "1.3.1",
+    "RegistryVersion": "1.4.0",
     "OwningEntity": "DMTF",
     "Messages": {
         "ResourceCreated": {
@@ -380,6 +380,27 @@
             "MessageSeverity": "OK",
             "NumberOfArgs": 0,
             "Resolution": "None."
+        },
+        "PropertyValueModifiedByClient": {
+            "Description": "Indicates that the value of a property was modified by a client.",
+            "LongDescription": "This message shall indicate that the value of a property was modified by a client.  For example, DHCPEnabled property was assigned the value `true` by a client.",
+            "Message": "The property %1 was assigned the value '%2' due to modification by a client.",
+            "Severity": "OK",
+            "MessageSeverity": "OK",
+            "NumberOfArgs": 2,
+            "ParamTypes": [
+                "string",
+                "string"
+            ],
+            "ArgDescriptions": [
+                "The name of the property.",
+                "The value assigned for property."
+            ],
+            "ArgLongDescriptions": [
+                "This argument shall contain the name of the property.",
+                "This argument shall contain the value assigned for property."
+            ],
+            "Resolution": "No resolution is required."
         },
         "ResourceVersionIncompatible": {
             "Description": "Indicates that an incompatible version of software was detected.  Examples of this are after a component or system-level software update.",

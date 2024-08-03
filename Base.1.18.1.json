@@ -1,13 +1,13 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2023 DMTF. All rights reserved.",
+    "@Redfish.Copyright": "Copyright 2014-2024 DMTF. All rights reserved.",
     "@Redfish.License": "Creative Commons Attribution 4.0 License.  For full text see link: https://creativecommons.org/licenses/by/4.0/",
     "@odata.type": "#MessageRegistry.v1_6_2.MessageRegistry",
-    "Id": "Base.1.18.0",
+    "Id": "Base.1.18.1",
     "Name": "Base Message Registry",
     "Language": "en",
     "Description": "This registry defines the base messages for Redfish.",
     "RegistryPrefix": "Base",
-    "RegistryVersion": "1.18.0",
+    "RegistryVersion": "1.18.1",
     "OwningEntity": "DMTF",
     "Messages": {
         "Success": {
@@ -441,8 +441,9 @@
             "Severity": "Warning",
             "MessageSeverity": "Warning",
             "VersionAdded": "1.18.0",
-            "NumberOfArgs": 2,
+            "NumberOfArgs": 3,
             "ParamTypes": [
+                "string",
                 "string",
                 "string"
             ],

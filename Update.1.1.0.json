@@ -1,13 +1,13 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2023 DMTF. All rights reserved.",
+    "@Redfish.Copyright": "Copyright 2014-2024 DMTF. All rights reserved.",
     "@Redfish.License": "Creative Commons Attribution 4.0 License.  For full text see link: https://creativecommons.org/licenses/by/4.0/",
     "@odata.type": "#MessageRegistry.v1_6_2.MessageRegistry",
-    "Id": "Update.1.0.2",
+    "Id": "Update.1.1.0",
     "Name": "Update Message Registry",
     "Language": "en",
     "Description": "This registry defines the update status and error messages.",
     "RegistryPrefix": "Update",
-    "RegistryVersion": "1.0.2",
+    "RegistryVersion": "1.1.0",
     "OwningEntity": "DMTF",
     "Messages": {
         "TargetDetermined": {
@@ -38,6 +38,24 @@
             "Severity": "OK",
             "MessageSeverity": "OK",
             "NumberOfArgs": 0,
+            "Resolution": "None."
+        },
+        "NoTargetsDetermined": {
+            "Description": "Indicates that no target resource or device for an image was determined for update.",
+            "LongDescription": "This message shall indicate that no target resource or device for an image was determined for update.",
+            "Message": "No target device will be updated with image '%1'.",
+            "Severity": "OK",
+            "MessageSeverity": "OK",
+            "NumberOfArgs": 1,
+            "ParamTypes": [
+                "string"
+            ],
+            "ArgDescriptions": [
+                "The identfier for the image."
+            ],
+            "ArgLongDescriptions": [
+                "This argument shall contain the identifier for the image."
+            ],
             "Resolution": "None."
         },
         "UpdateInProgress": {
@@ -145,18 +163,18 @@
                 "string"
             ],
             "ArgDescriptions": [
-                "The identfier for the image.",
+                "The identifier for the image, or the filename of the image if an identifier cannot be determined.",
                 "The URI or name of the target receiving the image."
             ],
             "ArgLongDescriptions": [
-                "This argument shall contain the identifier for the image.",
+                "This argument shall contain the identifier for the image.  If the identifier cannot be determined, this argument shall contain the filename of the image.",
                 "This argument shall contain the URI of the resource or a unique name of the component receiving the image."
             ],
             "Resolution": "None."
         },
         "VerificationFailed": {
-            "Description": "Indicates that the component failed to verify an image.",
-            "LongDescription": "This message shall indicate that the component failed to verify an image.",
+            "Description": "Indicates that the service or component failed to verify an image.",
+            "LongDescription": "This message shall indicate that the service or component failed to verify an image.  Some examples of image verification failure include: invalid signature, invalid checksum, or unknown image format.",
             "Message": "Verification of image '%1' at '%2' failed.",
             "Severity": "Critical",
             "MessageSeverity": "Critical",
@@ -166,11 +184,11 @@
                 "string"
             ],
             "ArgDescriptions": [
-                "The identfier for the image.",
+                "The identifier for the image, or the filename of the image if an identifier cannot be determined.",
                 "The URI or name of the target verifying the image."
             ],
             "ArgLongDescriptions": [
-                "This argument shall contain the identifier for the image.",
+                "This argument shall contain the identifier for the image.  If the identifier cannot be determined, this argument shall contain the filename of the image.",
                 "This argument shall contain the URI of the resource or a unique name of the component verifying the image."
             ],
             "Resolution": "None."

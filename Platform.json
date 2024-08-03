@@ -2,12 +2,12 @@
     "@Redfish.Copyright": "Copyright 2023 DMTF. All rights reserved.",
     "@Redfish.License": "Creative Commons Attribution 4.0 License.  For full text see link: https://creativecommons.org/licenses/by/4.0/",
     "@odata.type": "#MessageRegistry.v1_6_2.MessageRegistry",
-    "Id": "Platform.1.0.1",
+    "Id": "Platform.1.1.0",
     "Name": "Compute Platform Message Registry",
     "Language": "en",
     "Description": "This registry defines messages for compute platforms, covering topics related to processor, memory, and I/O device connectivity.",
     "RegistryPrefix": "Platform",
-    "RegistryVersion": "1.0.1",
+    "RegistryVersion": "1.1.0",
     "OwningEntity": "DMTF",
     "Messages": {
         "UnhandledExceptionDetectedAfterReset": {
@@ -54,6 +54,24 @@
                 "This argument shall contain a description of the device or location where the error occurred."
             ],
             "Resolution": "Check additional diagnostic data if available."
+        },
+        "NVRAMClearAsserted": {
+            "Description": "Indicates that the 'NVRAM Clear' jumper or switch is currently asserted.",
+            "LongDescription": "This message shall indicate that the 'NVRAM Clear' jumper or switch is currently asserted.",
+            "Message": "'NVRAM Clear' is currently on.",
+            "Severity": "Warning",
+            "MessageSeverity": "Warning",
+            "NumberOfArgs": 0,
+            "Resolution": "Turn off the 'NVRAM Clear' jumper or switch."
+        },
+        "SecurityBypassAsserted": {
+            "Description": "Indicates that the 'Security Bypass' jumper or switch is currently asserted.",
+            "LongDescription": "This message shall indicate that the 'Security Bypass' or 'Password Bypass' jumper or switch is currently asserted.",
+            "Message": "'Security Bypass' is currently on.",
+            "Severity": "Warning",
+            "MessageSeverity": "Warning",
+            "NumberOfArgs": 0,
+            "Resolution": "Turn off the 'Security Bypass' jumper or switch."
         }
     }
 }
